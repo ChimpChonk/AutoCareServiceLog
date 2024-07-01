@@ -5,6 +5,10 @@ VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoCareBackend.API", "AutoCareBackend.API\AutoCareBackend.API.csproj", "{E9148598-E5B1-40D7-8860-209A1BE31650}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoCareBackend.Repo", "AutoCareBackend.Repo\AutoCareBackend.Repo.csproj", "{023CA02B-7FAE-4FA6-AFAE-B7D1D731F47A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoCareBackend.Service", "AutoCareBackend.Service\AutoCareBackend.Service.csproj", "{1EE5F742-2CE2-4412-AE22-CB40D26A5791}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{E9148598-E5B1-40D7-8860-209A1BE31650}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E9148598-E5B1-40D7-8860-209A1BE31650}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E9148598-E5B1-40D7-8860-209A1BE31650}.Release|Any CPU.Build.0 = Release|Any CPU
+		{023CA02B-7FAE-4FA6-AFAE-B7D1D731F47A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{023CA02B-7FAE-4FA6-AFAE-B7D1D731F47A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{023CA02B-7FAE-4FA6-AFAE-B7D1D731F47A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{023CA02B-7FAE-4FA6-AFAE-B7D1D731F47A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EE5F742-2CE2-4412-AE22-CB40D26A5791}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EE5F742-2CE2-4412-AE22-CB40D26A5791}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EE5F742-2CE2-4412-AE22-CB40D26A5791}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EE5F742-2CE2-4412-AE22-CB40D26A5791}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
