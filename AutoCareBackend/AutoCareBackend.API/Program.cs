@@ -1,3 +1,5 @@
+using FirebaseAdmin;
+using Google.Apis.Auth.OAuth2;
 
 namespace AutoCareBackend.API
 {
@@ -7,8 +9,13 @@ namespace AutoCareBackend.API
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            //Firebase DI
+            builder.Services.AddSingleton(FirebaseApp.Create(new AppOptions()
+            {
+                Credential = GoogleCredential.FromJson(builder.Configuration.GetValue<string>("./firebase/autocare-firebase.json"))
+            }));
+
             // Add services to the container.
-            // builder.Services.AddSingleton
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
