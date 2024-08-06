@@ -18,7 +18,7 @@ namespace AutoCareBackend.Repo.Document
         public string Name { get; set; }
 
         [FirestoreProperty]
-        public string ProfilePictureUrl { get; set; }
+        public Uri ProfilePictureUrl { get; set; }
 
         [FirestoreProperty]
         public DateTime RegisteredDate { get; set; } = DateTime.UtcNow;

@@ -22,7 +22,9 @@ namespace AutoCareBackend.Repo.Document
 
         [FirestoreProperty]
         public string Cost { get; set; }
-        
+
+        [FirestoreProperty]
+        public List<Uri> Images { get; set; }
     }
     
 }

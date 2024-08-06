@@ -12,7 +12,7 @@ namespace AutoCareBackend.Repo.Model
         public string ServiceLocation { get; set; }
         public int Kilometers { get; set; }
         public string Description { get; set; }
-        public float Cost { get; set; }   
+        public double Cost { get; set; }   
         public List<Uri> Images { get; set; }
         public DateTime CreatedAt { get; set; }
     }

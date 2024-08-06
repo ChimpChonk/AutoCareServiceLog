@@ -10,10 +10,7 @@ namespace AutoCareBackend.API
             var builder = WebApplication.CreateBuilder(args);
 
             //Firebase DI
-            builder.Services.AddSingleton(FirebaseApp.Create(new AppOptions()
-            {
-                Credential = GoogleCredential.FromJson(builder.Configuration.GetValue<string>("./firebase/autocare-firebase.json"))
-            }));
+            Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", @"./firebase/autocare-firebase.json");
 
             // Add services to the container.
             builder.Services.AddControllers();
