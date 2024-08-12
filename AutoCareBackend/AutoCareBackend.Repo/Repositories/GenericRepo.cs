@@ -6,7 +6,7 @@ namespace AutoCareBackend.Repo.Repositories
 {
     public class GenericRepo<T> : IGenericRepo<T> where T : class
     {
-        private readonly DataContext _dataContext;
+        private DataContext _dataContext;
 
         public GenericRepo(DataContext dataContext)
         {
@@ -14,8 +14,8 @@ namespace AutoCareBackend.Repo.Repositories
         }
         public async Task<T> CreateAsync(T entity, string collectionName)
         {
-            CollectionReference collection = _dataContext.Collection(collectionName);
-            await _dataContext.collection
+            await _dataContext.AddDataAsync(collectionName, entity);
+            return entity;
         }
 
         public Task<IEnumerable<T>> GetAllAsync()
