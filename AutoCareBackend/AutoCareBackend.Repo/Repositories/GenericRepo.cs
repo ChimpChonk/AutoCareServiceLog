@@ -1,4 +1,3 @@
-using AutoCareBackend.Repo.Data;
 using AutoCareBackend.Repo.Interfaces;
 using Google.Cloud.Firestore;
 
@@ -6,26 +5,24 @@ namespace AutoCareBackend.Repo.Repositories
 {
     public class GenericRepo<T> : IGenericRepo<T> where T : class
     {
-        private DataContext _dataContext;
+        private FirestoreDB _db;
 
-        public GenericRepo(DataContext dataContext)
+        public GenericRepo(FirestoreDB db)
         {
-            _dataContext = dataContext;
+            _db = db;
         }
-        public async Task<T> CreateAsync(T entity, string collectionName)
+        public async Task<T> CreateAsync(string collectionName, T entity)
         {
-            await _dataContext.AddDataAsync(collectionName, entity);
+            await _db.CreateDocumentAsync(collectionName, entity);
             return entity;
         }
 
-        public Task<IEnumerable<T>> GetAllAsync()
+        public async Task<T> GetAsync(string collectionName, string documentId)
         {
-            throw new NotImplementedException();
-        }
+            var data = await _db.GetDocumentAsync(collectionName, documentId);
+            T doc = data.ConvertTo<T>();
+            return doc;
 
-        public Task<T> GetByIdAsync(string id)
-        {
-            throw new NotImplementedException();
         }
     }
 }

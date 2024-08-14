@@ -1,5 +1,5 @@
 using AutoCareBackend.Repo;
-using AutoCareBackend.Service.Interfaces;
+using AutoCareBackend.Repo.Interfaces;
 using FirebaseAdmin;
 using Google.Apis.Auth.OAuth2;
 using Google.Cloud.Firestore;
@@ -15,7 +15,7 @@ namespace AutoCareBackend.API
 
             //Firebase DI
             // Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", "./firebase/autocare-firebase.json");
-            builder.Services.AddSingleton<IFirestoreDBService, FirestoreDBService>();
+            builder.Services.AddSingleton<IFirestoreDB, FirestoreDB>();
             // Add services to the container.
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
