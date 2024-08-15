@@ -29,16 +29,32 @@ namespace AutoCareBackend.Repo
             return await documentRef.GetSnapshotAsync();
         }
         
-        public async Task UpdateDocumentAsync(string collectionPath, string documentId, IDictionary<string, object> data)
+        public async Task<bool> UpdateDocumentAsync(string collectionPath, string documentId, IDictionary<string, object> data)
         {
-            var documentRef = _db.Collection(collectionPath).Document(documentId);
-            await documentRef.UpdateAsync(data);
+            try
+            {
+                var documentRef = _db.Collection(collectionPath).Document(documentId);
+                await documentRef.UpdateAsync(data);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
-        public async Task DeleteDocumentAsync(string collectionPath, string documentId)
+        public async Task<bool> DeleteDocumentAsync(string collectionPath, string documentId)
         {
-            var documentRef = _db.Collection(collectionPath).Document(documentId);
-            await documentRef.DeleteAsync();
+            try
+            {
+                var documentRef = _db.Collection(collectionPath).Document(documentId);
+                await documentRef.DeleteAsync();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
     }
