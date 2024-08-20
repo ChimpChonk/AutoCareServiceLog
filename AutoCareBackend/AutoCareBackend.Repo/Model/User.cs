@@ -6,7 +6,7 @@ namespace AutoCareBackend.Repo.Model
     [FirestoreData]
     public class User
     {
-        [FirestoreProperty]
+        [FirestoreDocumentId]
         public string Id { get; set; }
 
         [FirestoreProperty]
