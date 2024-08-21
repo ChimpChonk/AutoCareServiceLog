@@ -5,9 +5,9 @@ namespace AutoCareBackend.Repo.Repositories
 {
     public class GenericRepo<T> : IGenericRepo<T> where T : class
     {
-        private FirestoreDB _db;
+        private IFirestoreDB _db;
 
-        public GenericRepo(FirestoreDB db)
+        public GenericRepo(IFirestoreDB db)
         {
             _db = db;
         }

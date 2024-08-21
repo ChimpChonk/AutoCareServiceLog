@@ -15,7 +15,7 @@ namespace AutoCareBackend.API.Controllers
             _repo = repo;
         }
 
-        [HttpPost]
+        // [HttpPost]
         
     }
 

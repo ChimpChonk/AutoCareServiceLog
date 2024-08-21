@@ -5,9 +5,9 @@ namespace AutoCareBackend.Repo.Repositories
 {
     public class UserRepo : IUserRepo
     {
-        private readonly FirestoreDB _db;
+        private readonly IFirestoreDB _db;
         private string collectionName = "Users";
-        public UserRepo(FirestoreDB db)
+        public UserRepo(IFirestoreDB db)
         {
             _db = db;
         }

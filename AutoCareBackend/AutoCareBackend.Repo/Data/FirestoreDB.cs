@@ -9,13 +9,9 @@ namespace AutoCareBackend.Repo
     {
         private readonly FirestoreDb _db;
 
-        public FirestoreDB()
+        public FirestoreDB(FirestoreDb db)
         {
-            FirebaseApp.Create(new AppOptions()
-            {
-                Credential = GoogleCredential.FromFile("./firebase/autocare-firebase.json")
-            });
-            _db = FirestoreDb.Create("autocare-a87a3");
+            _db = db;
         }
         public async Task<DocumentReference> CreateDocumentAsync(string collectionPath, object data)
         {
