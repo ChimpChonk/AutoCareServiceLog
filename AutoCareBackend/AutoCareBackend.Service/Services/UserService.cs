@@ -13,10 +13,13 @@ namespace AutoCareBackend.Service.Services
             _userRepo = userRepo;
         }
 
-        public async Task<User> CreateUser(User user)
+        public async Task<bool> CreateUser(User user)
         {
-            // if(user.Id == _userRepo.GetAsync(user.Id).Id)
-            return await _userRepo.CreateAsync(user);
+            // if(_userRepo.GetAsync(user.Id))
+            // {
+
+            // }
+            return true;
         }
 
         public Task<User> GetUserDetail(string documentId)
